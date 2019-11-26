@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">UnitConverter</string>
+    <string name="title_activity_convert">ConvertActivity</string>
+    <string name="square">Площадь</string>
+    <string name="gotovka">Готовка</string>
+    <string name="money">Валюта</string>
+    <string name="data">Данные</string>
+    <string name="energy">Энергия</string>
+    <string name="toplivo">Топливо</string>
+    <string name="dlina">Длина</string>
+    <string name="massa">Масса</string>
+    <string name="moshnost">Мощность</string>
+    <string name="davlenie">Давление</string>
+    <string name="speed">Скорость</string>
+    <string name="sqcentiment">Кв. сантиметр</string>
+    <string name="sqkilometr">Кв. километр</string>
+    <string name="sqmetres">Кв. метр</string>
+    <string name="hectar">Гектар</string>
+    <string name="kilometr">Километр</string>
+    <string name="mile">Миля</string>
+    <string name="metre">Метр</string>
+    <string name="santiment">Сантимерт</string>
+    <string name="milimetr">Милиметр</string>
+    <string name="micrometre">Микрометр</string>
+</resources>
