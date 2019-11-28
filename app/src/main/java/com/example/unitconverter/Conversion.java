@@ -22,7 +22,7 @@ public enum Conversion {
     SPEED(R.string.speed, Collections.<Unit>emptyList());
 
     private @StringRes int res;
-    private final List<Unit> mUnits;
+    final List<Unit> mUnits;
 
 
 

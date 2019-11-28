@@ -10,9 +10,15 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ConvertActivity extends AppCompatActivity {
@@ -20,6 +26,10 @@ public class ConvertActivity extends AppCompatActivity {
     private static final String ITEM_EXTRA_KEY = "conversion";
     private Spinner fromSpinner;
     private Spinner toSpinner;
+    private Conversion mConversion;
+    private Unit mFromUnit;
+    private Unit mToUnit;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +38,30 @@ public class ConvertActivity extends AppCompatActivity {
 
         fromSpinner = findViewById(R.id.from_spinner);
         toSpinner = findViewById(R.id.to_spinner);
-        Conversion[] spinnerItems = Conversion.values();
-        SpinnerAdapter adapter = new SpinnerAdapter();
-        fromSpinner.setAdapter(adapter);
+        ArrayAdapter<Conversion> fromAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Conversion.values());
+        ArrayAdapter<Conversion> toAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Conversion.values());
+        fromSpinner.setAdapter(fromAdapter);
+        toSpinner.setAdapter(toAdapter);
+        mConversion = (Conversion) getIntent().getSerializableExtra(ITEM_EXTRA_KEY);
+
+
+
+        fromSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+               mFromUnit = mConversion.mUnits.get(position);
+               Log.d("CONVERTACTIVITY", mFromUnit.toString());
+               convert();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+
+
+        });
 
     }
 
@@ -42,8 +73,13 @@ public class ConvertActivity extends AppCompatActivity {
     }
 
 
-    public void initSpiner() {
+    public void getNumber() {
+        fromSpinner.getSelectedItem().toString();
+    }
 
+
+    public void convert() {
+        double i = editText.getText * mFromUnit.mConventionToBase * mToUnit.mConventionToBase;
     }
 
 
