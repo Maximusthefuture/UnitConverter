@@ -22,4 +22,7 @@
     <string name="santiment">Сантимерт</string>
     <string name="milimetr">Милиметр</string>
     <string name="micrometre">Микрометр</string>
+    <string name="default_value">1.0</string>
+    <string name="from">Из</string>
+    <string name="to">В</string>
 </resources>

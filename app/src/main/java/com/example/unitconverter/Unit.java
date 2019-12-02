@@ -1,5 +1,8 @@
 package com.example.unitconverter;
 
+
+
+
 import androidx.annotation.StringRes;
 
 public enum Unit {
@@ -18,11 +21,14 @@ public enum Unit {
     @StringRes
     public int mLabelResource;
     public double mConventionToBase;
-    public double mConvetionFromBase;
+    public double mConvertionFromBase;
 
-    Unit(int mLabelResource, double mConventionToBase, double mConvetionFromBase) {
+    Unit(int mLabelResource, double mConventionToBase, double mConvertionFromBase) {
         this.mLabelResource = mLabelResource;
         this.mConventionToBase = mConventionToBase;
-        this.mConvetionFromBase = mConvetionFromBase;
+        this.mConvertionFromBase = mConvertionFromBase;
     }
+
+
+
 }

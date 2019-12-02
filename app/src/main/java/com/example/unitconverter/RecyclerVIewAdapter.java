@@ -19,7 +19,6 @@ public class RecyclerVIewAdapter extends RecyclerView.Adapter<RecyclerVIewAdapte
         mItemClickListener = clickListener;
     }
 
-
     @NonNull
     @Override
     public UnitViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -30,17 +29,14 @@ public class RecyclerVIewAdapter extends RecyclerView.Adapter<RecyclerVIewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull UnitViewHolder holder, int position) {
-            Conversion conversion = conversions.get(position);
-            holder.bindView(conversion);
-
-
+        Conversion conversion = conversions.get(position);
+        holder.bindView(conversion);
     }
 
     @Override
     public int getItemCount() {
         return conversions.size();
     }
-
 
 
     public class UnitViewHolder extends RecyclerView.ViewHolder {
@@ -52,7 +48,6 @@ public class RecyclerVIewAdapter extends RecyclerView.Adapter<RecyclerVIewAdapte
             super(itemView);
             textView = itemView.findViewById(R.id.tv);
             clickListener = itemClickListener;
-
         }
 
         void bindView(final Conversion conversion) {

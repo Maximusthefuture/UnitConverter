@@ -9,18 +9,21 @@
     <EditText
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:id="@+id/from"
+        android:id="@+id/from_edit_text"
         android:layout_width="100dp"
         android:layout_marginTop="24dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:inputType="number"/>
 
     <EditText
-        android:id="@+id/to"
+        android:id="@+id/to_edit_text"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="24dp"
+        android:inputType="number"
+        />
 
     <TextView
         app:layout_constraintTop_toTopOf="parent"
@@ -31,7 +34,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="30sp"
 
-        android:text="Из"
+        android:text="@string/from"
         />
 
     <TextView
@@ -42,14 +45,14 @@
         app:layout_constraintRight_toRightOf="parent"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="30sp"
-        android:text="В"/>
+        android:text="@string/to"/>
 
 
 
     <Spinner
         android:id="@+id/from_spinner"
         android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/from"
+        app:layout_constraintTop_toBottomOf="@id/from_edit_text"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_height="wrap_content">
 
@@ -57,7 +60,7 @@
 
     <Spinner
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/to"
+        app:layout_constraintTop_toBottomOf="@id/to_edit_text"
         android:id="@+id/to_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></Spinner>
