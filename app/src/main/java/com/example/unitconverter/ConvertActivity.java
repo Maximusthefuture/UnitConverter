@@ -12,6 +12,7 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +31,7 @@ public class ConvertActivity extends AppCompatActivity {
     private Conversion mConversion;
     private Unit mFromUnit;
     private Unit mToUnit;
+
 
     public static Intent getStartIntent(Context context, Conversion conversion) {
         Intent intent = new Intent(context, ConvertActivity.class);
@@ -92,12 +94,16 @@ public class ConvertActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 mToUnit = mConversion.mUnits.get(position);
 
-                double result = Double.parseDouble(fromEditText.getText().toString());
-                double from = result * mFromUnit.mConventionToBase * mToUnit.mConvertionFromBase;
+                DecimalFormat format = new DecimalFormat("#");
 
-                toEditText.setText(String.format("%.4f", from));
+                double from = Double.parseDouble(fromEditText.getText().toString());
+                double result = from * mFromUnit.mConventionToBase * mToUnit.mConvertionFromBase;
+
+
+
+                toEditText.setText(format.format(result));
                 toAdapter.notifyDataSetChanged();
-                Log.d("ConvertActivity", "result : " + from);
+                Log.d("ConvertActivity", "result : " + result);
             }
 
             @Override
