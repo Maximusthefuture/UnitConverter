@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class RecyclerVIewAdapter extends RecyclerView.Adapter<RecyclerVIewAdapter.UnitViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.UnitViewHolder> {
     private List<Conversion> conversions;
     private ListItemClickListener mItemClickListener;
 
-    public RecyclerVIewAdapter(List<Conversion> asList, ListItemClickListener clickListener) {
+    public RecyclerViewAdapter(List<Conversion> asList, ListItemClickListener clickListener) {
         conversions = asList;
         mItemClickListener = clickListener;
     }
@@ -38,10 +38,9 @@ public class RecyclerVIewAdapter extends RecyclerView.Adapter<RecyclerVIewAdapte
         return conversions.size();
     }
 
-
     public class UnitViewHolder extends RecyclerView.ViewHolder {
-        private TextView textView;
         ListItemClickListener clickListener;
+        private TextView textView;
 
         public UnitViewHolder(@NonNull final View itemView, final ListItemClickListener itemClickListener) {
 
@@ -52,12 +51,14 @@ public class RecyclerVIewAdapter extends RecyclerView.Adapter<RecyclerVIewAdapte
 
         void bindView(final Conversion conversion) {
             textView.setText(conversion.toString());
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     clickListener.onConvectionClickListener(conversion);
                 }
             });
+
         }
     }
 

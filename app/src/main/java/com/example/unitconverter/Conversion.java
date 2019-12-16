@@ -19,17 +19,15 @@ public enum Conversion {
     DAVLENIE(R.string.davlenie, Collections.<Unit>emptyList()),
     SPEED(R.string.speed, Collections.<Unit>emptyList());
 
-    private @StringRes int res;
+    @StringRes
+    private int res;
     final List<Unit> mUnits;
 
 
-
-    Conversion(int to, List<Unit> units) {
-        this.res = to;
+    Conversion(int res, List<Unit> units) {
+        this.res = res;
         mUnits = units;
     }
-
-
 
 
 }
