@@ -101,7 +101,7 @@ public class ConvertFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 mToUnit = mConversion.mUnits.get(position);
 
-                DecimalFormat format = new DecimalFormat("#");
+                DecimalFormat format = new DecimalFormat("#.#########");
 
                 double from = Double.parseDouble(fromEditText.getText().toString());
                 double result = from * mFromUnit.mConventionToBase * mToUnit.mConvertionFromBase;
